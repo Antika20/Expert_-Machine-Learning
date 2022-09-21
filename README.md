@@ -201,6 +201,7 @@ kemudian hasil Q3 akan dikurangi dengan hasil Q1 setelah itu buat variabel baru 
 dan jika dibuat persamaan dapat dilihat sebagai berikut :
 ***
 _Batas bawah = Q1 - 1.5 * IQR_
+
 _Batas atas = Q3 + 1.5 * IQR_
 ***
 setelah itu untuk melihat ukuran hasil penanganan _outliers_, variabel _insurance_ dapat dipanggil dengan __insurance.shape__ lalu akan ditampilkan hasil penanganan _outliers_ seperti pada gambar 9.
