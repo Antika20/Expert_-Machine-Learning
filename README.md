@@ -137,6 +137,7 @@ __Mencari missing value__
 Pada proyek ini  digunakan fungsi isnull().sum() yang berfungsi untuk menemukan nilai _missing value_ di masing  masing kolom dataset. _missing value_ sendiri dapat diartikan sebagai nilai atribut yang kosong pada objek data. kemudian hasil dari fungsi isnull().sum() diatas dapat dilihat di gambar 3 
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/value.PNG?raw=true)
+
 Gambar 3: output hasil pencarian _missing value_ 
 
 Berdasarkan output pada gambar 3 dapat dilihat bahwa tidak ditemukan _missing value_ pada masing masing kolom di dataset 
