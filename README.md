@@ -486,7 +486,7 @@ Support Vector Regression (SVR) menggunakan prinsip yang sama dengan SVM pada ka
 Pada Proyek ini  menggunakan model machine learning bertipe regresi yang berarti Jika prediksi mendekati nilai sebenarnya, performanya baik. Sedangkan jika tidak, performanya buruk. Secara teknis, selisih antara nilai sebenarnya dan nilai prediksi disebut eror. Maka, semua metrik mengukur seberapa kecil nilai error tersebut.
 
 Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. MSE didefinisikan dalam persamaan berikut
-![This is an image](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021071619431112f1106e20559e77c855cea11d1b1479.jpeg)
+![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/rumus%20MSE.jpeg?raw=true)
 
 Gambar 19 . Perhitungan MSE 
 
