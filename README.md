@@ -35,7 +35,8 @@ __Untuk membuat model , menggunakan 4 model yaitu KNN , Random Forest, Adaboost 
 
 # Data Understanding
 ****
-![This is an image](https://storage.googleapis.com/kaggle-datasets-images/13720/18513/71003abbbd54cc65c64065c1de79a9ff/dataset-cover.jpg?t=2018-02-21-00-25-33)
+![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/cover.jpg?raw=true)
+
 Gambar 1 . Cover Dataset Kaggle 
 
 Dataset ini dapat diakses menggunakan [Kaggle](https://www.kaggle.com/datasets/mirichoi0218/insurance)
@@ -43,6 +44,7 @@ Dataset ini dapat diakses menggunakan [Kaggle](https://www.kaggle.com/datasets/m
 Informasi dari dataset dapat dirangkum sebagai berikut :
 
 Tabel 1 . Rangkuman informasi Dataset
+
 Jenis | Keterangan 
 ---| ---
 Sumber | [Kaggle Dataset : Medical cost personal datasets](https://www.kaggle.com/datasets/mirichoi0218/insurance)
@@ -72,6 +74,7 @@ __Dataframe dataset dengan pandas__
 Pada proyek digunakan fungsi _read_ di pandas  untuk memasukkan dataset insurance.csv ke dalam bentuk dataframe menggunakan pandas dan dataframe itu akan tersimpan dalam variabel __df__ lalu untuk menampilkan 10 data pertama dalam dataset yaitu menggunakan df.head(10), lalu tampilannya  akan seperti pada tabel 2.  
 
 Tabel 2 : Tampilan dataset dalam bentuk dataframe dengan pandas 
+
 |   | age |   sex  |   bmi  | children | smoker |   region  |   charges   |
 |---|:---:|:------:|:------:|:--------:|:------:|:---------:|:-----------:|
 | 0 |  19 | female | 27.900 |     0    |   yes  | southwest | 16884.92400 |
@@ -92,6 +95,7 @@ Pada proyek ini digunakan fungsi info() di pandas  yang digunakan untuk menampil
 
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/info.PNG?raw=true)
+
 gambar 2: output tampilan informasi dari dataset  
 
 dari output pada gambar, dapat dilihat bahwa :
@@ -105,6 +109,7 @@ __Menampilkan statistik dataset__
 Pada proyek ini digunakan fungsi describe() yang berfungsi untuk menampilkan statistik dari dataset,dan output dari fungsi describe() tersebut dapat dilihat di tabel 3 
 
 Tabel 3: tampilan statistik dataset
+
 
 |           |     age     |     bmi     |   children  |    charges   |
 |-----------|:-----------:|:-----------:|:-----------:|:------------:|
@@ -200,6 +205,7 @@ _Batas atas = Q3 + 1.5 * IQR_
 setelah itu untuk melihat ukuran hasil penanganan _outliers_, variabel _insurance_ dapat dipanggil dengan __insurance.shape__ lalu akan ditampilkan hasil penanganan _outliers_ seperti pada gambar 9.
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/outsolved.PNG?raw=true)
+
 Gambar 9. Output Hasil penanganan _outlier_ 
 
 __Visualisasi _Category Fitur___
@@ -241,6 +247,7 @@ Pada gambar 13 merupakan visualisasi histogram untuk variabel " charges" yang me
 __Visualisasi korelasi _charges_ terhadap categorical data__
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/charges1.PNG?raw=true)
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/charges%202.PNG?raw=true)
+
 Gambar 14. Visualisasi korelasi charges terhadap categorical data
 
 Pada gambar 14 merupakan Visualisasi korelasi charges terhadap _categorical data_ dan pada gambar 14 terdapat _chart_ masing masing rata-rata "charges" relatif terhadap fitur kategori di atas, kita memperoleh insight sebagai berikut:
@@ -263,6 +270,7 @@ Pada pola sebaran data grafik pairplot sebelumnya, terlihat ‘age','children' m
 __Correlation Matriks Fitur Numerik__
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/matriks%20numerik.PNG?raw=true)
+
 Gambar 16. Correlation Matriks Fitur Numerik
 
 Pada gambar 16 merupakan visualisasi Correlation Matriks Fitur Numerik. fungsi Correlation Matriks terdapat  Koefisien korelasi berkisar antara -1 dan +1. Ia mengukur kekuatan hubungan antara dua variabel serta arahnya (positif atau negatif). Mengenai kekuatan hubungan antar variabel, semakin dekat nilainya ke 1 atau -1, korelasinya semakin kuat. Sedangkan, semakin dekat nilainya ke 0, korelasinya semakin lemah.
@@ -283,6 +291,7 @@ dan pada gambar 16 Jika kita amati lagi terdapat fitur ‘age’, ‘children', 
 __One Hot Encoding__
 
 Tabel 4. Hasil Pengolahan One Hot Encoding pada Fitur Kategori
+
 |   | age | children | charges     | sex_female | sex_male | smoker_no | smoker_yes | region_northeast | region_northwest | region_southeast | region_southwest |
 |---|-----|----------|-------------|------------|----------|-----------|------------|------------------|------------------|------------------|------------------|
 | 0 |  19 |     0    | 16884.92400 |      1     |     0    |     0     |      1     |         0        |         0        |         0        |         1        |
@@ -306,6 +315,7 @@ Karena hal inilah, teknik PCA digunakan untuk mereduksi variabel asli menjadi se
 Berikut ini akan ditampilkan Hasil PCA :
 
 Tabel 5.  Hasil Pengolahan PCA pada fitur Numerik 
+
 |      | age | children | charges     | sex_female | sex_male | smoker_no | smoker_yes | region_northeast | region_northwest | region_southeast | region_southwest |
 |------|-----|----------|-------------|------------|----------|-----------|------------|------------------|------------------|------------------|------------------|
 | 0    | 19  | 0        | 16884.92400 | 1          | 0        | 0         | 1          | 0                | 0                | 0                | 1                |
@@ -324,6 +334,7 @@ Tabel 5.  Hasil Pengolahan PCA pada fitur Numerik
 Pada tabel 5 menunjukkan  hasil dari reduksi dimensi menggunakan PCA pada __age__,__children__ dan __charges__ dengan mempertahankan komponen PC Pertama saja karena bersumber dari gambar dibawah :
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/round_pca.PNG?raw=true)
+
 gambar 17. proporsi informasi Komponen PCA 
 
 Pada gambar 17 dapat diartikan yaitu  100 % informasi pada kedua fitur yaitu __age__ dan __children__ berada di komponen PC Pertama 
@@ -355,6 +366,7 @@ Untuk menghindari kebocoran informasi pada data uji, kita hanya akan menerapkan 
 Berikut ini akan ditampilkan Hasil dari Standarisasi Pada X_train dan X_test :
 
 Tabel 6. Hasil standarisasi pada __X_train__
+
 |     |    age    |  children |
 |-----|:---------:|:---------:|
 | __67__  |  0.062072 | -0.067366 |
@@ -366,6 +378,7 @@ Tabel 6. Hasil standarisasi pada __X_train__
 Pada tabel 6  menunjukkan hasil proses  standarisasi yang dilakukan pada variabel 'age' dan 'children' di X_train 
 
 Tabel 7: Hasil standarisasi pada __Describe X_train__
+
 |     |    age    |  children |
 |-----|:---------:|:---------:|
 | __67__  |  0.062072 | -0.067366 |
@@ -473,6 +486,7 @@ Pada Proyek ini  menggunakan model machine learning bertipe regresi yang berarti
 
 Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. MSE didefinisikan dalam persamaan berikut
 ![This is an image](https://d17ivq9b7rppb3.cloudfront.net/original/academy/2021071619431112f1106e20559e77c855cea11d1b1479.jpeg)
+
 Gambar 19 . Perhitungan MSE 
 
 Keterangan:
@@ -484,6 +498,7 @@ yi = nilai sebenarnya
 y_pred = nilai prediksi
 
 Tabel 8 .  __Hasil Perhitungan MSE 4 Algoritma__
+
 |          | train            | test             |
 |----------|------------------|------------------|
 | __KNN__  | 38190666.934227  | 45165701.590825  |
