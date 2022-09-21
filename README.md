@@ -137,6 +137,7 @@ Gambar 3: output hasil pencarian _missing value_
 Berdasarkan output pada gambar 3 dapat dilihat bahwa tidak ditemukan _missing value_ pada masing masing kolom di dataset 
 
 ###  Exploratory Data Analysis
+
 #### Outliers
 Adalah sampel yang nilainya sangat jauh dari cakupan umum data utama. _outliers_ sendiri  adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari data hasil pengamatan lainnya
 
@@ -149,6 +150,7 @@ Untuk mengecek apakah ada _outliers_ atau tidak, dapat menggunakan teknik visual
 
 Berikut adalah ilustrasi dan penjelasan nilai statistik pada _boxplot_.
 ![This is an image](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:3be38c69ec4f1ee07ce8c24e42ce23fb20210910131731.png)
+
 Gambar 4 . Ilustrasi dan penjelasan nilai statistik pada boxplot
 
 Pada gambar 4  merupakan ilustrasi bagaimana _boxplot_ memvisualisasikan _outliers_, dapat diperhatikan _outliers_ ada jika letaknya diluar diluar nilai Q1 ( minimum ) dan diluar nilai Q3 (maximum)
@@ -158,22 +160,26 @@ _boxplot_ dapat diartikan untuk  menunjukkan ukuran lokasi dan penyebaran, serta
 __Visualisasi boxplot outliers pada fitur numerik__
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/outage.PNG?raw=true)
+
 Gambar 5. Visualisasi _boxplot_ variabel age
 
 
 Pada gambar 5  dapat diperhatikan _boxplot_ pada variabel __age__ tidak terdapat indikasi _outliers_
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/outbmi.PNG?raw=true)
+
 Gambar 6. Visualisasi _boxplot_ variabel bmi
 
 Pada gambar 6 dapat diperhatikan pada variabel __bmi__ terdapat indikasi _outliers_
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/outchild.PNG?raw=true)
+
 Gambar 7. Visualisasi _boxplot_ variabel children 
 
 Pada gambar 7 dapat diperhatikan pada variabel __children__ tidak terdapat indikasi _outliers_
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/outcharges.PNG?raw=true)
+
 Gambar 8. Visualisasi _boxplot_ variabel charges
 
 Pada gambar 8 dapat diperhatikan pada variabel __charges__ terdapat indikasi _outliers_
@@ -200,18 +206,21 @@ __Visualisasi _Category Fitur___
 * Dataset tipe _Categorical_ 
 __Sex__
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/visual%20sex.png?raw=true)
+
 Gambar 10. Hasil visualisasi chart bar __Sex__ di Fitur category
 
 Pada gambar 10 merupakan  visualisasi chart bar Sex dapat dilihat bahwa jumlah jenis kelamin laki laki lebih banyak daripada jumlah jenis kelamin perempuan dalam penerima asuransi kesehatan.
 
 __Smoker__ 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/visual%20smoker.png?raw=true)
+
 Gambar 11. Hasil visualisasi chart bar __Smoker__ di Fitur _category_
 
 Pada gambar 11 merupakan visualisasi chart bar __Smoker__ dapat dilihat bahwa jumlah perokok lebih sedikit sekitar 200 orang  daripada non perokok sekitar 1000 orang dalam penerima asuransi kesehatan.
 
 __Region__ 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/visula%20region.png?raw=true)
+
 Gambar 12. Hasil visualisasi chart bar __Region__ di Fitur _category_
 
 Pada gambar 12 merupakan visualisasi chart bar __Region__ dapat dilihat wilayah southeast lebih  banyak orang yang penerima asuransi kesehatan tinggal disana . kemudian untuk wilayah southwest, northwest dan northeast memiliki chart yang rata dan berarti jumlah penerima asuransi kesehatan tersebar merata tinggal di wilayah southwest, northwest dan northeast
@@ -242,6 +251,7 @@ Pada gambar 14 merupakan Visualisasi korelasi charges terhadap _categorical data
 
 __Visualisasi hubungan antar fitur numerik dengan fungsi pairplot__
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/pairplot.PNG?raw=true)
+
 Gambar 15. visualisasi hubungan antar fitur numerik dengan fungsi pairplot
 
 Pada gambar 15 merupakan visualisasi hubungan antar fitur numerik dengan fungsi pairplot dan pada gambar 15 terdapat fungsi pairplot dari library seaborn menunjukkan relasi pasangan dalam dataset. Dari grafik, kita dapat melihat plot relasi masing-masing fitur numerik pada dataset.
@@ -330,6 +340,7 @@ Pada proyek ini digunakan teknik split dataset, split dataset sangat penting dil
 Setelah dilakukan split dataset, kita bisa mengetahui jumlah seluruh dataset menggunakan fungsi print _len_ pada variabel X kemudian jika ingin mengetahui hasil jumlah dataset setelah dilakukan split dataset pada data training dapat menggunakan fungsi _len data X_train_ dan jika ingin mengetahui hasil jumlah dataset setelah dilakukan split dataset pada data testing dapat menggunakan fungsi _len data X_test_ dan untuk mengetahui hasil split dataset dapat dilihat dari gambar 18.
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/sample.PNG?raw=true)
+
 Gambar 18 : Hasil Split dataset 
 
 ### Standarisasi
@@ -486,6 +497,7 @@ Untuk memudahkan, mari kita plot matrik tersebut dengan bar chart
 
 __Visualisasi MSE 4 Algoritma__
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/visual%20mse.PNG?raw=true)
+
 Gambar 20. Visualisasi Hasil MSE dari 4 Algoritma 
 
 Dari gambar 20 , terlihat bahwa, model boosting  memiliki nilai error pada data test yang paling kecil kemudian  model dengan knn memiliki nilai error yang sedikit lebih banyak daripada model boosting sedangkan model random forest miliki lebih banyak nilai error dibandingkan boosting dan knn namum model svm memiliki nilai error paling banyak dari ketiga model boosting, kkn, dan random forest 
@@ -496,6 +508,7 @@ Untuk mengujinya, mari kita buat prediksi menggunakan beberapa harga dari data t
 __Hasil Perbandingan Prediksi 4 Algoritma__
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/predictMse.PNG?raw=true)
+
 Gambar 21.  Hasil Prediksi  MSE dari 4 Algoritma
 
 Pada gambar 21  adalah hasil prediksi "charges" dari 4 algoritma yaitu KNN, Random Forest dan berdasarkan Gambar 20 terlihat Terlihat bahwa prediksi dengan Boosting  memberikan hasil yang paling mendekati. dan berdasarkan  gambar 21 dapat dijabarkan bahwa algoritma KNN memiliki nilai prediksi MSE (Mean Squared Error) sebesar 9651.5, algoritma Random Forest(RF) memiliki nilai prediksi MSE (Mean Squared Error) sebesar 9755.4, algoritma Boosting memiliki nilai prediksi MSE (Mean Squared Error) sebesar 12167.0 sedangkan algoritma svm memiliki nilai prediksi MSE (Mean Squared Error) sebesar 9312.6 
