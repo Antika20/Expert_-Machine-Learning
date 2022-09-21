@@ -235,6 +235,7 @@ Pada gambar 12 merupakan visualisasi chart bar __Region__ dapat dilihat wilayah 
 
 
 __Visualisasi Fitur Numerik__
+
 * Dataset Tipe Numerical 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/numerical.png?raw=true)
 
@@ -247,6 +248,7 @@ Pada gambar 13 merupakan visualisasi histogram untuk variabel " charges" yang me
 * Distribusi charges miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model.
 
 __Visualisasi korelasi _charges_ terhadap categorical data__
+
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/charges1.PNG?raw=true)
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/charges%202.PNG?raw=true)
 
@@ -259,6 +261,7 @@ Pada gambar 14 merupakan Visualisasi korelasi charges terhadap _categorical data
 * Kesimpulan akhir, fitur kategori memiliki pengaruh yang rendah terhadap charges pada Fitur sex dan region tetapi memiliki pengaruh tinggi terhadap __Smoker__
 
 __Visualisasi hubungan antar fitur numerik dengan fungsi pairplot__
+
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/gambar/pairplot.PNG?raw=true)
 
 Gambar 15. visualisasi hubungan antar fitur numerik dengan fungsi pairplot
@@ -458,6 +461,7 @@ __Cara Kerja   AdaBOOST__
  Berikut merupakan parameter-parameter yang digunakan pada proyek ini :
  * learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting, pada proyek ini digunakan __learning_rate = 0.05__ 
  * random_state: digunakan untuk mengontrol random number generator yang digunakan, pada proyek ini digunakan __random_state = 55__
+ 
 ###### Kelebihan & Kekurangan   AdaBOOST 
 * __Kelebihan dari metode AdaBoost__ yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi real time.
 * __Kekurangan dari metode AdaBoost__ yaitu membutuhkan hypertuning yang tepat untuk tuning model yang tepat untuk data 
