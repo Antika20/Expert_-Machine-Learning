@@ -155,6 +155,7 @@ Ada beberapa teknik untuk menangani _outliers_, antara lain:
 Untuk mengecek apakah ada _outliers_ atau tidak, dapat menggunakan teknik visualisasi, yaitu __boxplot__.
 
 Berikut adalah ilustrasi dan penjelasan nilai statistik pada _boxplot_.
+
 ![This is an image](https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:3be38c69ec4f1ee07ce8c24e42ce23fb20210910131731.png)
 
 Gambar 4 . Ilustrasi dan penjelasan nilai statistik pada boxplot
