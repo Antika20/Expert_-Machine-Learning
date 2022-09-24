@@ -4,6 +4,7 @@
 *****
 ## __Film__
 ![This is an image](https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2021/10/10/2942550927.jpg)
+
 Gambar 1 . Poster Film 
 
 __Film__, juga dikenal sebagai movie,sinema,teater bahkan  foto bergerak, dengan pengertian sebagai  Serangkaian gambar diam yang, ketika ditampilkan di layar, menciptakan ilusi gambar bergerak karena efek fenomena phi. Ilusi optik ini memaksa pemirsa untuk melihat gerakan terus menerus antara objek yang berbeda secara berurutan. Proses pembuatan film adalah kombinasi antara seni dan industri. Anda dapat membuat film dengan menangkap adegan nyata dengan kamera film. Filmkan gambar atau model "miniatur" menggunakan teknik animasi tradisional, CGI, animasi komputer. Atau, karena kombinasi dari beberapa teknik yang ada dan efek visual lainnya.
