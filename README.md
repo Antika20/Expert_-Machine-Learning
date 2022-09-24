@@ -106,6 +106,7 @@ Pada berkas yang diunduh  terdapat 2 berkas csv yakni  movies.csv  dan ratings.c
 __movies.csv__
 
 Pada berkas movies,csv terdapat 9742 baris dengan 3 kolom, kolom-kolom tersebut terdiri 2 kolom bertipe objek dan 1 kolom bertipe numerik (int 64), untuk penjelasan mengenai variabel-variable pada dataset insurance ini dapat dilihat sebagai berikut:
+
 * movieId : id setiap movie yang tersedia 
 * title : judul film yang tersedia di dalam dataset 
 * genre : jenis kategori film yang tersedia di dalam dataset 
@@ -113,6 +114,7 @@ Pada berkas movies,csv terdapat 9742 baris dengan 3 kolom, kolom-kolom tersebut 
 __ratings.csv__
 
 Pada berkas ratings.csv terdapat 100836 baris dengan 4 kolom, kolom-kolom tersebut terdiri dari 3 kolom bertipe numerik yaitu int64 dan 1 kolom bertipe numerik yaitu float64, untuk penjelasan mengenai variabel-variable pada dataset insurance ini dapat dilihat sebagai berikut:
+
 * userId : id user yang tersimpan didalam dataset 
 * movieId : id setiap movie yang tersedia
 * rating : rating setiap film 
@@ -817,6 +819,7 @@ print("{0:.0%}".format(Precision))
 ```
 
 output
+
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.30.PNG?raw=true)
 
 Gambar 7 : _Persentase_  presisi sesuai genre yang mirip ayau serupa dengan genre dari judul yang diinput
