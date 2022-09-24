@@ -39,16 +39,19 @@ Berdasarkan permasalahan tersebut, pada proyek ini akan dibuat suatu model siste
 # Business Understanding
 ***
 ### Problem Statement 
+
 Berdasarkan penjelasan pada project overview, berikut ini merupakan batasan masalah yang perlu diselesaikan di proyek ini:
 * Berdasarkan data mengenai pengguna, bagaimana membuat sistem rekomendasi yang dipersonalisasi dengan _teknik content-based filtering_ untuk merekomendasikan  berdasarkan judul dan genre ?
 * dengan data rating film yang tersedia, bagaimana membuat sistem rekomendasi film berdasarkan selera  pengguna  dan  memiliki rating tinggi dari pengguna lain ? 
 
 ### Goals 
+
 Tujuan dibuatnya proyek ini adalah sebagai berikut :
 * Menghasilkan sejumlah rekomendasi movie yang dipersonalisasi untuk pengguna dengan teknik content-based filtering yang dapat merekomendasikan film berdasarkan judul dan genre 
 * Memberikan rekomendasi film yang sesuai dengan selera pengguna  dan  memiliki rating tinggi dari pengguna lain
 
 ### Solution Approach
+
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
  __Content Based filtering__
@@ -62,7 +65,9 @@ Untuk membuat profil pengguna, dua informasi ini penting bagi sistem dengan pend
 * Riwayat interaksi pengguna dengan sistem rekomendasi. 
 
 Kelebihan dan Kekurangan dari Content-based Filtering
+
 * Kelebihan 
+
 ** __User Independence__, tidak bergantung kepada user lain dalam memberikan rekomendasi yang ada.
 ** __New Item__, mampu merekomendasikan item yang belum dinilai oleh setiap pengguna.
 * Kekurangan 
@@ -73,8 +78,10 @@ __New User__ , Sistem tidak dapat memberikan rekomendasi yang dapat diandalkan p
  Collaborative filtering merupakan metode yang digunakan untuk merekomendasikan item berdasarkan penilaian pengguna sebelumnya, dimana atribut yang digunakan bukan konten tetapi user behaviour. Contohnya yaitu merekomendasikan suatu item berdasarkan dari riwayat rating dari user tersebut maupun user lain
  
  * Kelebihan 
+ 
 rekomendasi tetap akan bekerja dalam keadaan dimana konten sulit di analisis sekalipun,
 * Kekurangan 
+
 membutuhkan parameter rating, sehingga jika ada item baru sistem tidak akan merekomendasikan item tersebut.
 
 # Data Understanding
@@ -97,12 +104,14 @@ tabel 1 : Ringkasan informasi dataset
 Pada berkas yang diunduh  terdapat 2 berkas csv yakni  movies.csv  dan ratings.csv, untuk penjelasannya dapat dilihat di keterangan dibawah ini : 
 
 __movies.csv__
+
 Pada berkas movies,csv terdapat 9742 baris dengan 3 kolom, kolom-kolom tersebut terdiri 2 kolom bertipe objek dan 1 kolom bertipe numerik (int 64), untuk penjelasan mengenai variabel-variable pada dataset insurance ini dapat dilihat sebagai berikut:
 * movieId : id setiap movie yang tersedia 
 * title : judul film yang tersedia di dalam dataset 
 * genre : jenis kategori film yang tersedia di dalam dataset 
 
 __ratings.csv__
+
 Pada berkas ratings.csv terdapat 100836 baris dengan 4 kolom, kolom-kolom tersebut terdiri dari 3 kolom bertipe numerik yaitu int64 dan 1 kolom bertipe numerik yaitu float64, untuk penjelasan mengenai variabel-variable pada dataset insurance ini dapat dilihat sebagai berikut:
 * userId : id user yang tersimpan didalam dataset 
 * movieId : id setiap movie yang tersedia
@@ -762,6 +771,7 @@ __Visualisasi plot metrik evaluasi dengan matplotlib__
 Pada bagian ini dilakukan visualisasi _plot metrik_ dengan y didapat dari hasil root_mean_squared_error dan x merupakan epoch yang dilakukan, untuk melihat visualisasi plot _metric_ dapat dilihat pada gambar 6 
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.34.PNG?raw=true)
+
 Gambar 6 : visualisasi plot _metric_
 ***
 ## __Evalution__
@@ -808,6 +818,7 @@ print("{0:.0%}".format(Precision))
 
 output
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.30.PNG?raw=true)
+
 Gambar 7 : _Persentase_  presisi sesuai genre yang mirip ayau serupa dengan genre dari judul yang diinput
 
 Kesimpulan dari output yang dihasilkan bahwa prediksi rekomendasi yang diberikan 100% presisi sesuai genre yang mirip ayau serupa dengan genre dari judul yang diinput.
@@ -817,15 +828,18 @@ Kesimpulan dari output yang dihasilkan bahwa prediksi rekomendasi yang diberikan
 Dalam proyek ini, digunakan Root Mean Squared Error (RMSE) sebagai metrik evaluasi untuk mengukur kinerja model menggunakan pendekatan pembelajaran mendalam untuk sistem rekomendasi. Root mean squared error (RMSE) adalah metrik yang mengukur perbedaan antara nilai prediksi model sebagai perkiraan nilai yang diamati. Root mean squared error adalah hasil dari akar kuadrat dari mean squared error. Keakuratan metode estimasi kesalahan pengukuran ditunjukkan dengan adanya nilai RMSE yang kecil. Metode estimasi dengan root mean square error (RMSE) yang kecil dikatakan lebih akurat daripada metode estimasi dengan root mean square error yang besar (RMSE). Metode yang digunakan untuk menghitung root-mean-square error (RMSE) adalah dengan mengurangkan nilai aktual dari nilai prediksi, kemudian kuadratkan dan bagi jumlah dengan jumlah data. Hasil perhitungan tersebut dihitung ulang untuk mencari nilai akar kuadrat. Di bawah ini adalah rumus untuk menghitung RSME.
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.36.jpg?raw=true)
+
 Gambar 8 : Persamaan perhitungan RSME
 
 Berikut merupakan visualisai metrik pada proses training terhadap model Deep Learning sebelumnya:
 
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.34.PNG?raw=true)
+
 Gambar 9 : Visualisasi plot _metric_
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.35.PNG?raw=true)
+
 Gambar 10 : Hasil evaluasi model pada x dan y 
 
 Pada gambar 31 menunjukkan bahwa model mempunyai nilai ___root_mean_squared_error__ sebesar 0.21 dengan nilai loss yang diperoleh sebanyak 0.62 , hasil tersebut sudah cukup bagus karena dengan nilai root_mean_squared_error sebesar 0.21 berarti perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi sebesar 0.21 
