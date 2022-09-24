@@ -81,6 +81,7 @@ membutuhkan parameter rating, sehingga jika ada item baru sistem tidak akan mere
 Gambar 2. Cover Dataset 
 
 Dataset ini dapat diakses menggunakan [Kaggle](https://www.kaggle.com/datasets/dineshaitham/movies-recommendation-dataset)
+
 informasi dari dataset dapat dirangkum sebagai berikut :
 
 tabel 1 : Ringkasan informasi dataset 
