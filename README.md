@@ -52,6 +52,7 @@ Tujuan dibuatnya proyek ini adalah sebagai berikut :
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
  __Content Based filtering__
+ 
 Adalah rekomendasi berbasis konten yang merekomendasikan item yang memiliki kemiripan dengan item yang disukai/diinput pengguna sebelumnya.
  
 Konsep Content-based filtering mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna. Algoritma ini bekerja dengan menyarankan item serupa yang pernah disukai di masa lalu atau sedang dilihat di masa kini kepada pengguna. Semakin banyak informasi yang diberikan pengguna, semakin baik akurasi sistem rekomendasi.
@@ -68,6 +69,7 @@ Kelebihan dan Kekurangan dari Content-based Filtering
 __New User__ , Sistem tidak dapat memberikan rekomendasi yang dapat diandalkan pada pengguna baru, karena membutuhkan penelusuran terlebih dahulu pada preferensi pengguna.
 
  __Collaborative filtering__
+ 
  Collaborative filtering merupakan metode yang digunakan untuk merekomendasikan item berdasarkan penilaian pengguna sebelumnya, dimana atribut yang digunakan bukan konten tetapi user behaviour. Contohnya yaitu merekomendasikan suatu item berdasarkan dari riwayat rating dari user tersebut maupun user lain
  
  * Kelebihan 
@@ -108,6 +110,7 @@ Pada berkas ratings.csv terdapat 100836 baris dengan 4 kolom, kolom-kolom terseb
 * timestamp : template waktu film yang tersimpan 
 ***
 ## __Pra-pemrosesan Data__. 
+
 Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
 * Memasukkan dataset kedalam ke dalam dataframe menggunakan pandas
 * Menampilkan jumlah entry unik berdasarkan userId, movieId, genre dan rating
@@ -117,6 +120,7 @@ Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
 * Memvisualisasikan jumlah genre dataset 
 
 __Memasukkan dataset ke dalam ke dalam dataframe menggunakan pandas__
+
 Pada proyek digunakan fungsi read di pandas untuk memasukkan dataset insurance.csv ke dalam bentuk dataframe menggunakan pandas dan dataframe itu akan tersimpan dalam variabel movies dan ratings, lalu tampilan dataset  akan seperti pada tabel 2 dan 3.
 
 tabel 2 : Tampilan dataset movies dalam bentuk dataframe dengan pandas
@@ -165,6 +169,7 @@ Tabel 4 : Tampilan jumlah entry unik di movies.csv & ratings.csv
 |                                   | 'Andrew Dice Clay: Dice Rules (1991)']                             |
 
 __menampilkan informasi dataset__
+
 Pada proyek ini digunakan fungsi info() di pandas yang digunakan untuk menampilkan informasi dari dataset, informasi seperti tipe data yang terdapat di masing masing kolom dataset, hasil dari fungsi info() dapat dilihat pada tabel 5 dan  tabel 6 
 
 Tabel 5: Tampilan informasi movie.csv
@@ -183,6 +188,7 @@ Tabel 6: Tampilan informasi ratings.csv
 |  **1**  |   movieId  |   100836 non-null  |   int64   |
 |  **2**  |   rating   |   100836 non-null  |  float64  |
 |  **3**  |  timestamp |   100836 non-null  |   int64   |
+
 
 Pada proyek ini digunakan fungsi isnull().sum() yang berfungsi untuk menemukan nilai missing value di masing masing kolom dataset. missing value sendiri dapat diartikan sebagai nilai atribut yang kosong pada objek data. kemudian hasil dari fungsi isnull().sum() diatas dapat dilihat pada tabel 7 dan tabel 8 
 
@@ -204,6 +210,7 @@ Tabel 8 :  output hasil pencarian missing value pada ratings csv
 
 
 __Menghapus kolom _timestamp_ pada rating.csv__
+
 Pada proyek ini dilakukan penghapusan kolom _timestamp_ pada rating.csv dengan fungsi _drop_, penghapusan ini dilakukan karena pada proyek ini tidak menggunakan kolom _timestamp_, lalu tampilan dataset  akan seperti pada tabel 9
 
 tabel 9 : tabel hasil drop _timestamp_
@@ -224,6 +231,7 @@ tabel 9 : tabel hasil drop _timestamp_
 
 
 __Memvisualisasikan jumlah genre dataset__
+
 Pada proyek ini dibuat juga sebuah dataframe yang digunakan untuk menampilkan setiap genre movie yang terdapat di dataset lalu menghitung masing masing sampel genre dengan fungsi _len_, setelah itu cetak 5 data pertama dengan fungsi _head_, lalu tampilan jumlah sampel pada genre dapat dilihat pada tabel 10 
 
 tabel 10: Tabel tampilan jumlah sampel pada setiap kategori genre 
@@ -236,9 +244,11 @@ tabel 10: Tabel tampilan jumlah sampel pada setiap kategori genre
 | **4** |  Drama\|Romance |    349    |
 ***
 ## __Data Preparation__
+
  ##### __Content Based filtering__
  
 Pada persiapan data  data dapat dilakukan beberapa tahapan, antara lain :
+
 * Menggabungkan dataframe rating dengan movie berdasarkan nilai movieId
 * Mengecek _missing value_ 
 * Mengecek _missing value_ pada variabel movie_clean dan membersihkan _missing value_ dengan fungsi _dropna_
@@ -255,6 +265,7 @@ Pada persiapan data  data dapat dilakukan beberapa tahapan, antara lain :
 * Menampilkan _wordcloud_ untuk data genre dan title 
 
 __Menggabungkan dataframe rating dengan movie berdasarkan nilai movieId__
+
 Pada proyek ini digunakan fungsi _merge_ pada _pandas_ untuk menggabungkan 2 berkas csv yaitu movies dan ratings yang berdasarkan kolom movieId dalam satu dataframe dan dimasukkan keda;am variabel _movie_clean_, lalu tampilan dataframe hasil penggabungan _movies_ dan _ratings_ dapat dilihat pada tabel 11 
 
 tabel 11: Dataframe hasil penggabungan _movies_ dan _ratings_
@@ -274,6 +285,7 @@ tabel 11: Dataframe hasil penggabungan _movies_ dan _ratings_
 __100854 rows × 5 columns__
 
 __Mengecek _missing value_ pada variabel movie_clean dan membersihkan _missing value_ dengan fungsi _dropna____
+
 Pada proyek ini digunakan fungsi isnull().sum() yang berfungsi untuk menemukan nilai missing value di masing masing kolom dataset. missing value sendiri dapat diartikan sebagai nilai atribut yang kosong pada objek data. kemudian hasil dari fungsi isnull().sum(), dapat dilihat pada tabel 12  terdapat 18 missing value kolom userId dan rating, missing value tersebut dapat dibersihkan menggunakan fungsi _dropna_, method dropna() bisa digunakan untuk menghapus baris atau kolom yang mengandung missing values , setelah dihapus maka baris yang sebelumnya sebanyak 100854 rows × 5 columns maka akan menjadi 100836 rows × 5 columns
 
 Tabel 12 : Tampilan pencarian _missing value_ pada variabel _movie clean_
@@ -286,6 +298,7 @@ Tabel 12 : Tampilan pencarian _missing value_ pada variabel _movie clean_
 | dtype: int64 |   |
 
 __Menampilkan informasi dataset__
+
 Pada proyek ini digunakan fungsi info() di pandas yang digunakan untuk menampilkan informasi dari _movie_clean_, hasil dari fungsi info() dapat dilihat pada tabel 13
 
 Tabel 13 : Tampilan informasi pada _variabel movie_clean_
@@ -301,10 +314,12 @@ Tabel 13 : Tampilan informasi pada _variabel movie_clean_
 
 
 __Membagi dataset menjadi 2 Fitur yaitu _numerical_ dan _category___
+
 Pada proyek ini membagi dataset menjadi 2 fitur _numerical_ dan _category_ dengan tujuan memvisualisasikan dataset tersebut, dan dapat dilihat pada gambar 8, untuk fitur kategori _numerical_ dapat dimasukkan kolom movieId, userId, dan rating sedangkan untuk fitur _category_ biasanya dipakai tipe data objek dan pada fitur ini dapat dimasukkan kolom _title_ dan _genres_
 
 
 __Menampilkan jumlah sampel & persentase pada fitur category__
+
 Pada proyek ini digunakan fitur _category_ untuk menampilkan  jumlah sampel dan _persentase_ pada kolom title dan genre,lalu untuk melihat hasil jumlah sampel dan _persentase_ dapat dilihat pada Tabel 14  dan tabel 15  
 
 Tabel 14 : Tampilan jumlah sampel movies dan _persentase_ 
@@ -340,15 +355,18 @@ Tabel 15 : Tampilan jumlah sampe genre dan _persentase_
 __951 rows x 2 columns__
 
 __Memvisualisasikan fitur numerik__
+
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.11.PNG?raw=true)
 Gambar 3 : Visualisasi histogram pada fitur numerik 
 
 Pada gambar 3, merupakan visualisasi histogram yang dilakukan pada fitur numerik yaitu movieId, userId, dan rating, dari histogram tersebut dapat diperoleh _insight_ sebagai berikut :
+
 * Pada histogram __rating__, dapat dilihat bahwa rating movie yang memiliki rata rata rating 4.0 memiliki jumlah movie terbanyak diantara rating lainnya.
 * Pada histogram __userId__, dapat dilihat bahwa userId terdaftar paling banyak berada di kisaran angka 600 .
 * Pada histogram __movieId__,dapat dilihat bahwa movieId dengan id 0 terdaftar paling banyak berada di kisaran angka hampir mencapai 600000 .
 
 __Mengurutkan movie berdasarkan movieId kemudian memasukkannya ke dalam variabel fix_movie__
+
 Pada bagian ini terdapat langkah mengurutkan variabel _movie_clean_ berdasarkan movieId dengan urutan bertipe _ascending_ setelah itu dimasukkan kedalam variabel fix_movie, untuk hasil urutan tabel _movie_clean_ dapat dilihat di tabel 16
 
 tabel 16 : Hasil sorting tabel berdasarkan movieId 
@@ -368,6 +386,7 @@ tabel 16 : Hasil sorting tabel berdasarkan movieId
 __100836 rows x5 columns__
 
 __Mengecek berapa jumlah fix_movie__
+
 Pada bagian adalah pengecekkan entry unik pada variabel fix_movie yang berdasarkan movieId setelah itu dilakukan perhitungan dengan fungsi _len_, untuk melihat output dapat dilihat pada tabel 17
 
 Tabel 17 : Total jumlah perhitungan entry unik variabel fix_movie berdasarkan movieId
@@ -375,6 +394,7 @@ Tabel 17 : Total jumlah perhitungan entry unik variabel fix_movie berdasarkan mo
 |------|
  
 __Mengecek kategori title yang unik__
+
 Pada bagian ini adalah Pada bagian adalah pengecekkan entry unik pada variabel fix_movie yang berdasarkan title setelah itu dilakukan perhitungan dengan fungsi _len_, untuk melihat output dapat dilihat pada Tabel 18 
 
 Tabel 18 :  Output hasil entry unik variabel unik fix_movie berdasarkan title 
@@ -385,12 +405,15 @@ Tabel 18 :  Output hasil entry unik variabel unik fix_movie berdasarkan title
 
 
 __Membuang data duplikat pada variabel preparation__
+
 Pada bagian ini penghapus data duplikat di variabel fix_movie berdasarkan movieId menggunakan fungsi _drop_duplicates_ setelah itu dimasukkan pada variabel _preparation_movie_, setelah dihapus maka baris yang sebelumnya di tabel 16 sebanyak 100836 rows x5 columns menjadi 9724 rows × 5 columns
 
 __Mengkonversikan data series movieId, title, genre menjadi dalam bentuk list__
+
 Pada bagian ini adalah bagian untuk mengkonversikan data series movieId, title, genre yang ada di variabel preparation_movie menjadi dalam bentuk list setelah itu totalkan jumlah hasil konversi bentuk list dari movieId, title, genre menggunakan fungsi _len_ kemudian cetak hasilnya menggunakan fungsi _print_
 
 __Membuat dictionary untuk data movieId, title, genre__
+
 Pada bagian ini terdapat langkah membuat dictionary untuk data movieId, title, genre dalam satu data frame dan dimasukkan ke dalam variabel movie_new setelah itu variabel movie_new dimasukkan kedalam variabel data , untuk hasil tabel dapat dilihat di tabel 19. 
 
 tabel 19 : Hasil dictionary data frame movieId, title, genre
@@ -410,17 +433,22 @@ tabel 19 : Hasil dictionary data frame movieId, title, genre
 __9724 rows × 3 columns__
 
 __Menampilkan wordcloud untuk data genre dan title__
+
 Pada bagian ini dilakukan tahap _wordcloud_ untuk menunjukkan kata mana yang paling banyak ditulis didalam kolom title dan genre, dan dapat dilihat pada gambar 4 bahwa kata comedy dan drama adalah kata yang paling banyak ditulis didalam kolom genre sedangkan pada gambar 5, dapat dilihat bahwa kata _Saturn 3 (1980)_ dan _Emma (1996)_  adalah kata yang paling banyak ditulis didalam kolom title  
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.15.PNG?raw=true)
+
 Gambar 4 : _wordcloud_ pada kolom genre 
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.16.PNG?raw=true)
+
 Gambar 5 : _wordcloud_ pada kolom title 
 
 ***
  ##### __collaborative filtering__
+ 
  Pada persiapan data data dapat dilakukan beberapa tahapan, antara lain :
+ 
  * Menyandikan (encode) fitur 'userID ' dan ' movieID' ke dalam indeks integer dengan cara mengubah userID dan movie menjadi list tanpa nilai yang sama, melakukan _encoding_ userID  dan movieID serta melakukan proses _encoding_ angka ke userID dan movieID 
  * Memetakan ‘userID’ dan ‘movieID’ ke dataframe yang berkaitan.
  * Mengecek beberapa hal dalam data seperti jumlah user, jumlah movie, kemudian mengubah nilai rating menjadi float, mendapatkan nilai rating _minimum_ dan _maximum_
@@ -434,6 +462,7 @@ __Menyandikan (encode) fitur 'userID ' dan ' movieID' ke dalam indeks integer de
 3. Terakhir melakukan proses _encoding_ angka ke userID dengan cara perulangan _i_ di variabel  _i_= x  setelah itu dilakukan proses _enumerate_ yaitu proses mengubah nilai _tuple_ kedalam bentuk _objek_ pada variabel user_ids dan movie_ids setelah itu dimasukkan ke dalam variabel user_encodend_to_user dan user_encodend_to_movie lalu hasil tersebut dicetak menggunakan fungsi _print_
 
 __Memetakan ‘userID’ dan ‘movieID’ ke dataframe yang berkaitan__ 
+
 Pada bagian ini kita akan melakukan _mapping_ pada data frame  kolom user dan kolom movie serta pada data frame kolom user_ID dan movie_ID ke dalam variabel user_to_user_encoded dan movie_to_movie_encoded
 
 
@@ -459,8 +488,6 @@ __Melakukan Teknik TF-IDF Vectorizer untuk menemukan representasi fitur penting 
 2. Setelah itu melakukan perhitungan _idf_ pada kolom title_movie pada dataframe di variabel data 
 
 3. Kemudian melakukan _mapping array_ dari fitur _indeks integer_ ke fitur nama menggunakan fungsi  _get_feature_names()_
-
-
 
 4. Lalu melakukan _fit_ kemudian di _transformasikan_ ke dalam bentuk _matriks_ pada kolom title_movie di dataframe pada variabel data menggunakan fungsi _fit_transform_ lalu hasil tersebut dimasukkan kedalam variabel baru yaitu tfidf_matrix kemudian setelah itu untuk melihat ukuran _matriks_ dapat menggunakan fungsi _shape_ pada variabel tfidf_matrix, dan dapat dilihat hasil ukuran matriks pada tabel 20.
 
@@ -545,6 +572,7 @@ Pada tabel 24 menunjukkan Dengan cosine similarity berhasil mengidentifikasi kes
 Pada tabel 25 menunjukkan 10 genre_Movie pada baris vertikal dan 5 title_Movie pada sumbu horizontal yang dapat diindentifikasi  kesamaan antara genre movie dan title movie
 
 __Mendapatkan rekomendasi__
+
 1. Pada bagian ini, yang pertama  dilakukan adalah  pembuatan fungsi rekomendasi movie berdasarkan kemiripan _data frame_ dengan parameter yang dipakai sebagai berikut :
 * title_movie : judul film  (index kemiripan dataframe).
 * Similarity_data : Dataframe mengenai similarity yang telah kita definisikan sebelumnya.
@@ -618,6 +646,7 @@ Tabel 30 : Hasil output  4 genre yang memiliki kemiripan dengan film he Greatest
 
 ***
 ##### __Collaborative filtering__
+
 Pada bagian ini dilakukan modelling dengan Collaborative filtering memakai pendekatan _deep learning_, dengan urutan modelling sebagai berikut : 
 * Melakukan pengacakan  datanya terlebih dahulu agar distribusinya menjadi random
 * Membuat variabel x untuk mencocokkan data user dan movie menjadi satu value dan y untuk membuat rating dari hasil Kemudian melakukan  Pembagian data menjadi data training dan validasi 
@@ -629,6 +658,7 @@ Pada bagian ini dilakukan modelling dengan Collaborative filtering memakai pende
 *  Visualisasi plot metrik evaluasi dengan matplotlib
 
 __Melakukan pengacakan  datanya terlebih dahulu agar distribusinya menjadi random__
+
 Pada bagian  ini dilakukan pengacakan pada dataset dengan tujuan agar distribusinya menjadi random dengan menggunakan fungsi _random_  pada _pandas_, dan hasil pengacakan dataset dapat dilihat pada tabel 31 
 
 tabel 31 : Hasil pengacakan dataset 
@@ -647,6 +677,7 @@ tabel 31 : Hasil pengacakan dataset
 |  **15795** |     103    |     6711    |     5.0    |    102   |    2046   |
 
 __Membuat variabel x untuk mencocokkan data user dan movie menjadi satu value dan y untuk membuat rating dari hasil dan membagi dataset menjadi data training dan validasi__
+
 Pada bagian ini dilakukan pembuatan variabel 'x' pada kolom user dan movie agar  dapat menjadi satu _values_ setelah itu dibuat lagi variabel 'y' untuk membuat rating dari hasi dengan hasil akhir rating didapat dari hasil pembagian nilai variabel x dikurangi dengan nilai minimum rating dibagi dengan nilai max rating dikurangi nilai minimum rating  kemudian dijadikan satu values setelah itu dilakukan pembagian dataset menjadi data training dengan ukuran dataset sekitar 80 %  dari dataset  dan data validasi dengan ukuran dataset sekitar 20 % dari dataset setelah itu cetak hasil variabel x dan y menggunakan fungsi _print_, lalu hasilnya dapat dilihat pada tabel 32 
 
 Tabel 32: Hasil pembagian dataset training dan validasi 
@@ -661,15 +692,18 @@ Tabel 32: Hasil pembagian dataset training dan validasi
 
 
 __Setelah itu dilakukan pembuatan model menghitung skor kecocokan antara pengguna dan movie dengan teknik embedding__
+
 Pada bagian ini dilakukan untuk pertama kali yaitu proses embedding terhadap data user dan movie dengan beberapa layer embedding  yang digunakan sebagai berikut yaitu layer embedding user,  layer embedding user bias, layer embeddings movie, layer embedding movie bias. Selanjutnya, lakukan operasi perkalian dot product antara embedding user dan movie. Selain itu, kita juga dapat menambahkan bias untuk setiap user dan resto dengan menambahkan layer pada embeddingnya lalu lakukan Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid
 
 __Proses compile pada model__
+
 Pada compile ini menggunakan  class RecommenderNet dengan keras Model class dengan parameter yang digunakan sebagai berikut :
 *  Binary Crossentropy untuk menghitung loss function,
 *  Adam (Adaptive Moment Estimation) sebagai optimizer
 *  root mean squared error (RMSE) sebagai metrics evaluation. 
 
 __Proses training model__
+
 Pada bagian ini dilakukan proses training model dengan parameter yang digunakan sebagai berikut :
 * x : variabel pada x_train
 * y : variabel pada y_train
@@ -678,11 +712,13 @@ Pada bagian ini dilakukan proses training model dengan parameter yang digunakan 
 * validation_data = (x_val, y_val) : artinya data yang akan divalidasi didapatkan dari variabel x_val, y_val
 
 __Membuat kelas untuk mengambil sampel user secara acak dan definisikan variabel movie_not_visited sebagai sebagai daftar movie untuk direkomendasikan pada pengguna__
+
 1. Membuat sebuah variabel baru yaitu movie_df untuk menampung dataset  dari variabel movie_new dan membuat variabel df untuk menampung dataset dari ratings.csv 
 2. Mengambil sampel userID dengan cara menggunakan fungsi _iloc_ yang berguna untuk menyeleksi data pada kolom userID dan dimasukkan kedalam variabel user_id kemudian hasil user_id dibandingkan dengan userID yang terdapat di ratings.csv kemudian hasil tersebut dimasukkan kedalam variabel movie_visited_by_user
 3. Setelah itu buat variabel baru yaitu movie_not_visited untuk menampung hasil penyeleksian _keys_ dari movieID dan setelah iu dibuatlah sebuah perulangan _for_ pada movie_not_visited untuk mendapatkan nilai x pada variabel [movie_to_movie_encoded dan terakhir dibuatlah sebuah variabel baru user_encoder untuk menampung hasil encoded berdasarkan userID 
 
 __Memperoleh rekomendasi restoran, gunakan fungsi model.predict() dari library Keras__
+
 Pada bagian ini dilakukan rekomendasi film dengan fungsi m_model.predict()_ pada variabel user_movie_array setelah itu dilakukan pengurutan rekomendasi film berdasarkan movieID yang dimiliki dan tampilkan hasil tersebut sebanyak 20 rekomendasi film kemudian dilakukan juga rekomendasi film yang direkomendasikan kepada user berdasarkan rating yang dimilikinya dan tampilkan itu sebanyak 5 rekomendasi film, untuk melihat hasil rekomendasi dapat dilihat pada tabel 33
 
 Tabel 33: Hasil rekomendasi film
@@ -722,13 +758,16 @@ Tabel 33: Hasil rekomendasi film
 
 
 __Visualisasi plot metrik evaluasi dengan matplotlib__
+
 Pada bagian ini dilakukan visualisasi _plot metrik_ dengan y didapat dari hasil root_mean_squared_error dan x merupakan epoch yang dilakukan, untuk melihat visualisasi plot _metric_ dapat dilihat pada gambar 6 
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.34.PNG?raw=true)
 Gambar 6 : visualisasi plot _metric_
 ***
 ## __Evalution__
+
 #### __Content based filtering__
+
 Metric yang digunakan pada sistem rekomendasi judul film berdasarkan teknik __Content based filtering__ adalah accuracy precision. Precision adalah metrik yang membandingkan rasio prediksi benar atau positif dengan keseluruhan hasil yang diprediksi positif dengan rumus
 ```python 
 Precission = (TP) / (TP+FP).
@@ -772,7 +811,9 @@ output
 Gambar 7 : _Persentase_  presisi sesuai genre yang mirip ayau serupa dengan genre dari judul yang diinput
 
 Kesimpulan dari output yang dihasilkan bahwa prediksi rekomendasi yang diberikan 100% presisi sesuai genre yang mirip ayau serupa dengan genre dari judul yang diinput.
+
 #### __Collaborative filtering__
+
 Dalam proyek ini, digunakan Root Mean Squared Error (RMSE) sebagai metrik evaluasi untuk mengukur kinerja model menggunakan pendekatan pembelajaran mendalam untuk sistem rekomendasi. Root mean squared error (RMSE) adalah metrik yang mengukur perbedaan antara nilai prediksi model sebagai perkiraan nilai yang diamati. Root mean squared error adalah hasil dari akar kuadrat dari mean squared error. Keakuratan metode estimasi kesalahan pengukuran ditunjukkan dengan adanya nilai RMSE yang kecil. Metode estimasi dengan root mean square error (RMSE) yang kecil dikatakan lebih akurat daripada metode estimasi dengan root mean square error yang besar (RMSE). Metode yang digunakan untuk menghitung root-mean-square error (RMSE) adalah dengan mengurangkan nilai aktual dari nilai prediksi, kemudian kuadratkan dan bagi jumlah dengan jumlah data. Hasil perhitungan tersebut dihitung ulang untuk mencari nilai akar kuadrat. Di bawah ini adalah rumus untuk menghitung RSME.
 
 ![This is an image](https://github.com/Antika20/Expert_-Machine-Learning/blob/source-Rekomendasi/2.36.jpg?raw=true)
@@ -790,6 +831,7 @@ Gambar 10 : Hasil evaluasi model pada x dan y
 Pada gambar 31 menunjukkan bahwa model mempunyai nilai ___root_mean_squared_error__ sebesar 0.21 dengan nilai loss yang diperoleh sebanyak 0.62 , hasil tersebut sudah cukup bagus karena dengan nilai root_mean_squared_error sebesar 0.21 berarti perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi sebesar 0.21 
 
 #### Kesimpulan 
+
 Dapat dilihat bahwa dengan menggunakan teknik __Content based filtering__ memberikan hasil 100% presisi sesuai genre yang mirip atau serupa dengan genre dari judul yang diinput, jika dievaluasi menggunakan metrics _Precision_
 
 Sedangkan dengan teknik __Collaborative filtering__ memberikan hasil sebesar 0.21 dari perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi
