@@ -15,3 +15,11 @@ https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercise
 Collab Linear Regression with a Real Dataset :
 
 https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_a_real_dataset.ipynb?utm_source=mlcc&utm_campaign=colab-external&utm_medium=referral&utm_content=linear_regression_real_tf2-colab&hl=id
+
+Dokumentasi Pandas : Missing Value 
+
+https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html
+
+Visualization
+
+https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
