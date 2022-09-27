@@ -23,3 +23,13 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html
 Visualization
 
 https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
+
+Manual Similarity with Chocolates :
+
+https://colab.research.google.com/github/google/eng-edu/blob/main/ml/clustering/clustering-manual-similarity.ipynb?utm_source=ss-clustering&utm_campaign=colab-external&utm_medium=referral&utm_content=clustering-manual-similarity#scrollTo=9NkysjxvKAli
+
+ Supervised Similarity with Chocolates :
+ 
+ https://colab.research.google.com/github/google/eng-edu/blob/main/ml/clustering/clustering-supervised-similarity.ipynb?utm_source=ss-clustering&utm_campaign=colab-external&utm_medium=referral&utm_content=clustering-supervised-similarity#scrollTo=9NkysjxvKAli
+ 
+ 
